@@ -6,7 +6,7 @@ export interface Repository {
   note: string;
 }
 
-export const gRepo: Repository = $state({
+export const currentRepository: Repository = $state({
   uuid: crypto.randomUUID(),
   start: '',
   end: '',

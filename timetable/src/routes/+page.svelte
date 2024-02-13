@@ -2,6 +2,7 @@
   import Greet from '../lib/Greet.svelte';
   import Timeline from '../lib/Timeline.svelte';
   import EditWork from '../lib/EditWork.svelte';
+  import CreateWork from '../lib/CreateWork.svelte';
 
   import { createIsOpenedModal } from '../repository.svelte';
 
@@ -11,6 +12,8 @@
 <h1>Welcome to SvelteKit</h1>
 
 <Greet />
+
+<CreateWork {isOpenedModal} />
 
 <EditWork {isOpenedModal} />
 

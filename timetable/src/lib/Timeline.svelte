@@ -1,17 +1,48 @@
 <script lang="ts">
   import Card from '../lib/Card.svelte';
   import TimelineTableTitle from '../components/atoms/TimelineTableTitle.svelte';
+
+  import type { Repository } from '../repository.svelte';
+  //import { createRepository } from '../repository.svelte';
+
+  let { isOpenedModal } = $props();
+
+  //let works: Repository[] = $state([]);
+  //const x = createRepository();
+  //x.update({
+  //  start: '08:40',
+  //  end: '10:00',
+  //  title: '1234',
+  //  note: '作業'
+  //});
+  let x = {
+    start: '08:40',
+    end: '10:00',
+    title: '1234',
+    note: '作業'
+  };
+
+  //works[0] = x.value;
+  let y: Repository = {
+    uuid: crypto.randomUUID(),
+    start: '08:40',
+    end: '10:00',
+    title: '1234',
+    note: '作業'
+  };
+  //works = [x, y];
 </script>
 
 <ul class="timeline timeline-vertical">
   <li>
-    <TimelineTableTitle time={'08:30'} isDone={true} />
+    <!--<TimelineTableTitle time={'08:30'} isDone={true} />-->
+    <TimelineTableTitle time="08:30" isDone={true} />
     <hr />
   </li>
   <li>
     <hr />
     <div class="timeline-end timeline-box">
-      <Card startTime="8:30" endTime="10:00" title="1234" note="作業した" />
+      <Card {isOpenedModal} startTime={x.start} endTime={x.end} title={x.title} note={x.note} />
     </div>
     <hr />
   </li>
